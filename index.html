@@ -8,6 +8,18 @@
 			font-family: digit;
 			src: url('digital-7_mono.ttf') format("truetype");
 		}
+		.btn{
+			height: 54px;
+  border: none !important;
+  background: #F14E95;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-left: 50px;
+  padding-right: 50px;
+border-radius:16px;	
+		}
 	</style>
 	<link href="css/default.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -19,7 +31,7 @@
 	<div id="mainDiv">
 		<div id="content">
 			<div id="code">
-				<span class="comments">我的爱人</span><br />
+				<span class="comments">我爱的人</span><br />
 				<span class="space"/><span class="comments">我会牵着你的手，走到我们满头白发的那一天</span><br />
 				<span class="space"/><span class="comments">我会守护你生命里的精彩，并陪伴你一路精彩下去。</span><br />
 				<span class="space"/><span class="comments">你的幸福快乐，是我一生的追求。</span><br />
@@ -38,12 +50,14 @@
 				<span class="space"/>为我们的将来担负起一生的责任，<br />
 				<span class="space"/>愿意为你去做每一件能让你开心快乐的事。<br />
 				<span class="space"/>所有我们经历的点点滴滴，<br />都是我们一辈子最美的回忆。</span> <br />
-				<br />
+				<br /> 
+				<span class="space" />Are You Love me? <br/>
+				<span class="space" />请给我一个机会，让我爱你一生，嫁给我吧，我的傻姑娘！ <br/>	
 			</div>
 			<div id="loveHeart">
 				<canvas id="garden"></canvas>
 				<div id="words">
-					<div id="messages">
+					<div id="messages">	
 						垚,我爱你！
 						<div id="elapseClock"></div>
 					</div>
@@ -52,6 +66,10 @@
 						<div class="signature">- limin2021</div>
 					</div>
 				</div>
+			</div>
+			<div style="display:none" id="btndiv">
+				<button class="btn" id="accept" style="width:50%" >接受</button>
+				<button class="btn" id="refuse" style="height:25px">拒绝</button>
 			</div>
 		</div>
 	
@@ -85,9 +103,39 @@
 				timeElapse(together);
 			}, 500);
 
+			 setTimeout(function () {
+                                $('#btndiv').css('display','');
+                        }, 35000);
+			
 			adjustCodePosition();
 			$("#code").typewriter();
 		}
 	</script>
+<script type="text/javascript">
+        $('#refuse').click(function(){
+                console.log('无情拒绝');
+                var x;
+                var r=confirm("真的要拒绝吗!");
+                if(r == true){
+                        r=confirm("还是要拒绝吗？");
+                         if(r == true){
+                                r=confirm("一定要拒绝吗？");
+                                if(r == true){
+                                        alert('留下孤单的背影!');
+                                }
+                        }else{
+                                console.log('无奈接受');
+                                alert('爱你❤️‘');
+                        }
+                }else{
+                        console.log('勉强接受');
+                        alert('爱你❤️‘');
+                }
+        });
+        $('#accept').click(function(){
+                console.log('愉快接受');
+                alert('爱你❤️‘');
+        });
+</script>
 </body>
 </html>
